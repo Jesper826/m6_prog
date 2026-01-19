@@ -23,15 +23,46 @@
 <html lang="nl">
     <head>
         <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>De Groene Apen Kist - Boerderij zonder Tom</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-</head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>De Groene Apen Kist - Boerderij zonder Tom</title>
+        <link rel="stylesheet" href="/assets/css/style.css">
+    </head>
 <body class="site">
     <header class="site-header">
         <?php include_once __DIR__ . '/../source/views/header.php'; ?>
     </header>
     <main>
+        <!-- Login Section -->
+        <section class="login-section">
+            <h2>Inloggen</h2>
+            <div id="login-message" class="message"></div>
+            
+            <form id="loginForm" onsubmit="handleLoginSubmit(event)">
+                <div class="form-group">
+                    <label for="username">Gebruikersnaam:</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        placeholder="Voer je gebruikersnaam in"
+                        required 
+                    />
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Wachtwoord:</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Voer je wachtwoord in"
+                        required 
+                    />
+                </div>
+                
+                <button type="submit" class="login-button" id="loginBtn">Inloggen</button>
+            </form>
+        </section>
          
         <?php 
         if ($page === 'home') {

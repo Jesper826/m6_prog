@@ -101,6 +101,11 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- Test Data Insertion
 -- -----------------------------------------------------
  
+-- Application users test data
+-- Password: helloworld
+INSERT INTO `groen`.`users` (username,displayname,passwordhash) VALUES ('leraar','mario','$argon2id$v=19$m=65536,t=4,p=1$Zm9Cc0IwQ3BDLzRSaVIvYw$attCFRn94QfWxMObfoDrLtZ7emSPJjFl+AsqHGuQGAo');
+INSERT INTO `groen`.`users` (username,displayname,passwordhash) VALUES ('jesper','Jesper','goated');
+ 
 -- Insert logins (passwords should be hashed in a real application)
 INSERT INTO `login` (`idlogin`, `username`, `password`) VALUES
 (1, 'jan_smit', 'hashed_password_1'),

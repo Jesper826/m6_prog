@@ -102,34 +102,35 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
  
 -- Insert logins (passwords should be hashed in a real application)
-INSERT INTO `login` (`idlogin`, `username`, `password`) VALUES
-(1, 'jan_smit', 'hashed_password_1'),
-(2, 'piet_jansen', 'hashed_password_2'),
-(3, 'anna_devries', 'hashed_password_3');
+-- All test data is now in 01_data.sql to avoid conflicts
+-- DISABLED: INSERT INTO `login` (`idlogin`, `username`, `password`) VALUES
+-- (1, 'jan_smit', 'hashed_password_1'),
+-- (2, 'piet_jansen', 'hashed_password_2'),
+-- (3, 'anna_devries', 'hashed_password_3');
  
--- Insert klanten
-INSERT INTO `klant` (`idklant`, `Naam`, `leeftijd`, `woonplaats`, `login_idlogin`) VALUES
-(1, 'Jan Smit', 34, 'Amsterdam', 1),
-(2, 'Piet Jansen', 45, 'Utrecht', 2),
-(3, 'Anna de Vries', 28, 'Rotterdam', 3);
+-- Insert klanten (already in 01_data.sql)
+-- DISABLED: INSERT INTO `klant` (`idklant`, `Naam`, `leeftijd`, `woonplaats`, `login_idlogin`) VALUES
+-- (1, 'Jan Smit', 34, 'Amsterdam', 1),
+-- (2, 'Piet Jansen', 45, 'Utrecht', 2),
+-- (3, 'Anna de Vries', 28, 'Rotterdam', 3);
  
--- Insert products
-INSERT INTO `product` (`idproduct`, `naam`, `prijs`) VALUES
-(1, 'Biologische Tomaten', 3.50),
-(2, 'Komkommers', 1.20),
-(3, 'Frisse Appels', 2.50),
-(4, 'Wortelen', 1.80),
-(5, 'Ambachtelijke Kaas', 8.95);
+-- Insert products (already in 01_data.sql)
+-- DISABLED: INSERT INTO `product` (`idproduct`, `naam`, `prijs`) VALUES
+-- (1, 'Biologische Tomaten', 3.50),
+-- (2, 'Komkommers', 1.20),
+-- (3, 'Frisse Appels', 2.50),
+-- (4, 'Wortelen', 1.80),
+-- (5, 'Ambachtelijke Kaas', 8.95);
  
--- Insert aanbiedingen (15% korting op appels)
-INSERT INTO `aanbiedingen` (`idaanbiedingen`, `korting`, `product_idproduct`) VALUES
-(1, 15, 3);
+-- Insert aanbiedingen (already in 01_data.sql)
+-- DISABLED: INSERT INTO `aanbiedingen` (`idaanbiedingen`, `korting`, `product_idproduct`) VALUES
+-- (1, 15, 3);
  
--- Insert customer purchases (klant_has_product)
-INSERT INTO `klant_has_product` (`klant_idklant`, `product_idproduct`) VALUES
-(1, 1), -- Jan bought Tomaten
-(1, 3), -- Jan bought Appels
-(2, 2), -- Piet bought Komkommers
-(3, 3), -- Anna bought Appels
-(3, 5); -- Anna bought Kaas
+-- Insert customer purchases (already in 01_data.sql)
+-- DISABLED: INSERT INTO `klant_has_product` (`klant_idklant`, `product_idproduct`) VALUES
+-- (1, 1), -- Jan bought Tomaten
+-- (1, 3), -- Jan bought Appels
+-- (2, 2), -- Piet bought Komkommers
+-- (3, 3), -- Anna bought Appels
+-- (3, 5); -- Anna bought Kaas
  

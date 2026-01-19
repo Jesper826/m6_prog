@@ -1,3 +1,11 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    require_once __DIR__ . '/../source/controller/postmessagecontroller.php';
+    $ctrl = new PostMessageController();
+    $ctrl->handlePost();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -18,8 +26,8 @@
                     </div>
                 </div>
             </div>
-            <section>
-                <form action="post_message.php" method="POST">
+            <section> 
+                <form action="" method="POST">
                     <input type="text" name="name" placeholder="jouw naam" >
                     <textarea name="bericht" placeholder="dit is jouw lelijke bericht..."></textarea>
                     <button type="submit">DE MUUR</button>
@@ -27,8 +35,11 @@
             </section>
             <?php
             require_once __DIR__ . '/../source/views/bericht.php';
+            require_once __DIR__ . '/../source/controller/postmessagecontroller.php';
+
             ?>
         </div>
     </div>
+        <script src="assets/js/main.js" defer></script>
 </body>
 </html>
