@@ -2,7 +2,9 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require_once __DIR__ . '/../source/controller/postmessagecontroller.php';
     $ctrl = new PostMessageController();
-    $ctrl->handlePost();
+    $ctrl->handlePostFromJson();
+    require_once __DIR__ . '/../source/views/wall.php';
+    exit();
 }
 ?>
 
@@ -12,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bericht - Mailbox</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     <div class="container">
@@ -34,9 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </form>
             </section>
             <?php
-            require_once __DIR__ . '/../source/views/bericht.php';
-            require_once __DIR__ . '/../source/controller/postmessagecontroller.php';
-
+            require_once __DIR__ . '/../source/views/wall.php';
             ?>
         </div>
     </div>

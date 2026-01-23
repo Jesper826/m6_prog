@@ -17,7 +17,7 @@ $products = $result->fetch_all(MYSQLI_ASSOC);
                             $discount = $product['korting'];
                             $newPrice = $originalPrice - ($originalPrice * $discount / 100);
                         ?>
-                        <p><s>Prijs: € <?php echo number_format($originalPrice, 2, ',', '.'); ?></s></p>
+                        <p><s>Prijs: € <?php echo number_format($originalPrice, 2, ',', '.' ); ?></s></p>
                         <p>Nu met <?php echo $discount; ?>% korting!</p>
                         <p><strong>Nieuwe prijs: € <?php echo number_format($newPrice, 2, ',', '.'); ?></strong></p>
                     </div>
@@ -28,4 +28,3 @@ $products = $result->fetch_all(MYSQLI_ASSOC);
         </div>
     </section>
 </main>
- 

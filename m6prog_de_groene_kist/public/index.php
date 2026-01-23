@@ -32,7 +32,6 @@
         <?php include_once __DIR__ . '/../source/views/header.php'; ?>
     </header>
     <main>
-        <!-- Login Section -->
         <section class="login-section">
             <h2>Inloggen</h2>
             <div id="login-message" class="message"></div>

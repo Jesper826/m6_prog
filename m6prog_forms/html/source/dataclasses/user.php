@@ -18,7 +18,7 @@ class User
     public function insert()
     {
         global $connection;
-        $       stmt = $connection->prepare("INSERT INTO user (name, bericht) VALUES (?, ?)");
+        $stmt = $connection->prepare("INSERT INTO user (name, bericht) VALUES (?, ?)");
         $stmt->bind_param("ss", $this->name, $this->bericht);
         $stmt->execute();
     }

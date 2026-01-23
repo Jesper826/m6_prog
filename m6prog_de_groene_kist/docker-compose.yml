@@ -6,9 +6,7 @@ services:
     container_name: prog_m6_php
     volumes:
       - './:/var/www/html'
-    depends_on:
-      groene_kist_othman:
-        condition: service_healthy
+
 
   nginx:
     image: nginx:latest

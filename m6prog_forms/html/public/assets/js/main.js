@@ -9,14 +9,16 @@ form.addEventListener('submit', function (event) {
         sign: formData.get('name')
     };
 
+    let options = {
+        method: "POST",
+        cache: "no-cache",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(json)
+    };
 
-    console.log(json);
+    fetch('index.php', options)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('wall').outerHTML = data;
+        });
 });
-
-
-let options =
-{
-    method: "POST",
-    cache: "no-cache",
-    headers: { "Content-Type": "application/json" }
-}

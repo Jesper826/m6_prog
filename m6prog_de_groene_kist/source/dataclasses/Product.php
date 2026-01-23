@@ -5,6 +5,7 @@ class product
     public int $idproduct;
     public string $naam;
     public float $prijs;
+    public ProductType $ProductType;
  
     public function __construct(int $idproduct, string $naam, float $prijs)
     {
@@ -44,8 +45,7 @@ class product
             $row['naam'],
             $row['prijs']
         );
+ 
     }
 }
- 
- 
  

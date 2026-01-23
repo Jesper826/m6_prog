@@ -14,4 +14,16 @@ class PostMessageController
         header("location:  "  . $_SERVER['PHP_SELF']);
         exit();
     }
+
+    public function handlePostFromJson()
+    {
+        $json = file_get_contents('php://input');
+        $data = json_decode($json);
+
+        $text = $data->text;
+        $name = $data->sign;
+
+        $user = new User(0, $name, $text);
+        $user->insert();
+    }
 }
